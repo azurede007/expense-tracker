@@ -6,6 +6,16 @@ import db
 
 app = FastAPI()
 
+# Allow frontend (HTML/JS) to call API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 # ==========================
 # Pydantic Models
 # ==========================
